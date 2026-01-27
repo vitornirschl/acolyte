@@ -57,12 +57,12 @@ class SrtTranslatorApp(App):
     CSS_PATH = "tui.tcss"
 
     BINDINGS = [
-        Binding("ctrl+s", "save_file", "Salvar"),
-        Binding("ctrl+q", "quit", "Sair"),
-        Binding("ctrl+j", "next_subtitle", "Próxima"),
-        Binding("ctrl+k", "prev_subtitle", "Anterior"),
-        Binding("ctrl+h", "edit_original", "Editar Original"),
-        Binding("ctrl+l", "edit_translation", "Editar Tradução"),
+        Binding("ctrl+s", "save_file", "Salvar", priority=True),
+        Binding("ctrl+q", "quit", "Sair", priority=True),
+        Binding("ctrl+j", "next_subtitle", "Próxima", priority=True),
+        Binding("ctrl+k", "prev_subtitle", "Anterior", priority=True),
+        Binding("ctrl+h", "edit_original", "Editar Original", priority=True),
+        Binding("ctrl+l", "edit_translation", "Editar Tradução", priority=True),
     ]
 
     def __init__(self, original_path: str, trans_path: str = None):
