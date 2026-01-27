@@ -34,7 +34,7 @@ TextArea {
 
 /* Legenda vazia ou não visitada (cinza) */
 .empty {
-    border: solid $text-muted 60%
+    border: solid $secondary;
 }
 
 /* Legenda preenchida ou traduzida (verde) */
