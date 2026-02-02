@@ -1,66 +1,55 @@
-
-Screen {
-    layout: grid;
-    grid-size: 2 3;
-    grid-rows: 1fr 2fr 1fr;
-    grid-columns: 1fr 1fr;
-    padding: 1;
+Header {
+    dock: top;
 }
 
-/* --- Título e Labels --- */
-Label {
-    width: 100%;
-    background: $surface;
-    color: $text-muted;
-    padding-left: 1;
-    text-style: bold;
+Footer {
+    dock: bottom;
 }
 
-/* --- Blocos de Legenda ---*/
+Center {
+    layout: horizontal;
+}
+
 SubtitleBlock {
-    border: solid $panel-lighten-2;
-    margin: 1;
-    background: $panel;
     height: 100%;
 }
 
-TextArea {
-    border: none;
+SubtitleBlock TextArea {
     height: 1fr;
+    border: none;
+}
+
+#editor {
+    layout: grid;
+    grid-size: 2 3;
+    grid-rows: 3fr 4fr 3fr;
+    padding-bottom: 1;
+    padding-right: 1;
+    padding-left: 1;
+}
+
+#curr_orig {
     background: $panel;
+    border: double gray;
 }
 
-/* --- Cores de Estado --- */
-
-/* Legenda vazia ou não visitada (cinza) */
-.empty {
-    border: solid $secondary;
+#curr_trans {
+    background: $panel;
+    border: double gray;
+    &.verified {
+        border: double $success;
+    }
 }
 
-/* Legenda preenchida ou traduzida (verde) */
-.completed {
-    border: solid $success;
-    color: $text;
+.second_plan {
+    background: $panel 30%;
+    border: gray 30%;
+    &.verified {
+        border: $success 30%
+    }
 }
 
-/* Foco e Edição */
-
-/* O bloco original atual quando não está em edição */
-#current_orig {
-    border: solid $primary-muted;
-}
-
-/* O bloco original em foco (modo edição) */
-#current_orig:focus-within {
-    border: double $warning;
-}
-
-/* O bloco de tradução atual */
-#current_trans {
-    border: double $accent;
-}
-
-/* Se estiver completada e com foco, mantém verde mas borda dupla */
-#current_trans.completed:focus-within{
-    border: double $success;
+.second_plan TextArea {
+    color: $text-muted;
+    background: transparent;
 }
